@@ -101,78 +101,7 @@ header('location:home2.php');
     font-size: xx-large;
  }
     </style>
-<script>
-     function checkpass(){
-        var pass= document.getElementById("pass");
-        var repass= document.getElementById("repass");
-        if(pass.value===repass.value){
-      document.getElementsByName("submit")=true;}
-        else{
-        alert("password does not match");
-        return false;
-        document.getElementsByName("submit") = false;
-      repass.focus();
-      repass.select();
-    
-      }}
-    function checkfname()
-    { 
-     fname= document.getElementById("Fname");
-    var letters = /^[A-Za-z]+$/;
-    if(fname.value.match(letters))
-     {
-        checklname();
-     }
-    else
-     {
-     alert("Please check your first name  contains just letters");
-     return false;
-     fname.focus();  
-     }
-   }
-
-     function checklname()
-     {
-       var  lname = document.getElementById("Lname");
-     var letters = /^[A-Za-z]+$/;
-     if(lname.value.match(letters))
-     {
-        checkphonenumber();
-     }
-     else
-     {
-     alert("Please check your last name  contains just letters");
-     lname.focus();
-     lname.select();
-     document.getElementsByName("submit") = false;
-     return false;
-   
-     }
-      }
-
-     function checkphonenumber()
-     {
-     var phonenumber=document.getElementById("phonenumber");
-      var numbers = /^[0-9]+$/;
-      if(phonenumber.value.match(numbers))
-      {
-      checkpass();
-      }
-      else
-      {
-      alert('Please check your phone number contains only numbers');
-      phonenumber.focus();
-     phonenumber.select();
-     document.getElementsByName("submit") = false;
-     return false;
-   
-      }
-         } 
-
-        
-
-   
-    </script>
+<script src="validate.js"></script>
 </head>
 <body>
 <header><br><br><div><a href="home.html">
