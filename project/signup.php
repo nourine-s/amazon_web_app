@@ -100,6 +100,11 @@ header('location:home2.php');
     border-radius: 8px;
     font-size: xx-large;
  }
+    #passwordStrength {
+            display: none;
+            font-size: 14px;
+            margin-top: 5px;
+        }
     </style>
 <script src="validate.js"></script>
 </head>
@@ -115,6 +120,7 @@ header('location:home2.php');
     Email<br><input type="email" class="text" id="email" name="email" required><br>
    Phone number<br><input type="text" class="text" id="phonenumber" name="phonenumber" required><br>
   Password<br><input type="password" class="text" id="pass" name="password" minlength="8" placeholder="At least 8 characters" required><br>
+    <div id="passwordStrength"></div>
    Confirm Password<br><input type="password" class="text" id="repass"  required><br><br>
     Gender : <input type="radio" name="gender" value="Male" >Male
              <input type="radio" name="gender" value="Female">Female
