@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var accountCreatedMsg = document.getElementById("accountCreatedMsg");
-
     function updatePasswordStrength(password) {
         var strengthText = '';
         var strength = 0;
@@ -88,11 +86,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.getElementById("myform").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting normally
-
-        if (validate()) {
-        window.location.href = "home2.php";
-            
+  
+        
+        if (validate()==false) {
+        
+            event.preventDefault(); // Prevent the form from submitting normally
         }
     });
 });

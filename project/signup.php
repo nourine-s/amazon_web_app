@@ -14,18 +14,18 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
    $result = mysqli_query($con, $select);
    if(mysqli_num_rows($result) > 0){
       echo("<script type='text/javascript'> alert('User already exist!') </script>") ;
-
    }else{
-
-$insert ="INSERT INTO `data`(`firstname`, `lastname`, `email`, `phonenumber`, `password` , `gender`) VALUES ('$F_name','$L_name','$email','$phone_number','$password','$gender')";
+      echo '<script>if(validate()) {</script>';
+{$insert ="INSERT INTO `data`(`firstname`, `lastname`, `email`, `phonenumber`, `password` , `gender`) VALUES ('$F_name','$L_name','$email','$phone_number','$password','$gender')";
 mysqli_query( $con , $insert );
 header('location:home2.php');
 }
-}
+}}
 ?>
 <!DOCTYPE html>
 <html>
     <head>
+    <script src="validate.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon"  href="logo2.png" >
     <title> Sign up </title>
@@ -100,7 +100,7 @@ header('location:home2.php');
     border-radius: 8px;
     font-size: xx-large;
  }
-    #passwordStrength {
+ #passwordStrength {
             display: none;
             font-size: 14px;
             margin-top: 5px;
@@ -120,14 +120,14 @@ header('location:home2.php');
     Email<br><input type="email" class="text" id="email" name="email" required><br>
    Phone number<br><input type="text" class="text" id="phonenumber" name="phonenumber" required><br>
   Password<br><input type="password" class="text" id="pass" name="password" minlength="8" placeholder="At least 8 characters" required><br>
-    <div id="passwordStrength"></div>
+  <div id="passwordStrength"></div>
    Confirm Password<br><input type="password" class="text" id="repass"  required><br><br>
     Gender : <input type="radio" name="gender" value="Male" >Male
              <input type="radio" name="gender" value="Female">Female
              <span class="optional">(optional)</span>
    <br> <br>
    <input type="reset" name="reset" id="reset" value="Reset">
-   <input type="submit" name="submit" id="button" value="Create Account" onclick="checkfname()"  ></form><br>
+   <input type="submit" name="submit" id="button" value="Create Account"   ></form><br>
    or<br><br>
   <a href="https://www.gmail.com/"><button class="m"> <i class="fa fa-google"> </i>&nbsp;&nbsp;SignUp with google</button></a><br><br>
   <a href="https://www.facebook.com/"><button class="m"><i class="fa fa-facebook-square"></i> &nbsp;&nbsp;SignUp with facebook</button></a><br><br>
