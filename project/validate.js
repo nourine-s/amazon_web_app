@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // Prevent the form from submitting normally
 
         if (validate()) {
-        window.location.href = "home.html";
+        window.location.href = "home2.php";
             
         }
     });
